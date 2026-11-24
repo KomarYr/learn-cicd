@@ -40,7 +40,7 @@ func TestGetAPIKey(t *testing.T) {
 			header:      http.Header{"Authorization": []string{""}},
 			key:         "",
 			expectError: true,
-			errMsg:      "malformed authorization header",
+			errMsg:      ErrNoAuthHeaderIncluded.Error(),
 		},
 	}
 
@@ -52,7 +52,7 @@ func TestGetAPIKey(t *testing.T) {
 					t.Fatalf("expected error: %v, got: nill", tc.errMsg)
 				}
 				if err.Error() != tc.errMsg {
-					t.Fatalf("expected error: %v, got: %v", tc.expectError, err.Error())
+					t.Fatalf("expected error: %v, got: %v", tc.errMsg, err.Error())
 				}
 			} else if err != nil {
 				t.Fatalf("unexpected error: %v", err)
