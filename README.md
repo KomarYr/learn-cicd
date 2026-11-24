@@ -1,3 +1,4 @@
+![Tests overage](https://github.com/KomarYr/learn-cicd/actions/workflows/ci.yml/badge.svg)
 # learn-cicd-starter (Notely)
 
 Yurii's version of Boot.dev's Notely app.
